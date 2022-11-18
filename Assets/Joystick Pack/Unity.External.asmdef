@@ -1,0 +1,16 @@
+{
+    "name": "Unity.External",
+    "rootNamespace": "",
+    "references": [
+        "GUID:3e8e8fc4db72edd42bf196df2b825912"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
