@@ -15,7 +15,7 @@ public class PlayerAnimController : MonoBehaviour
     
     void Awake()
     {
-       _animator = GetComponent<Animator>();
+       _animator = GetComponentInChildren<Animator>();
        _animator.CrossFadeInFixedTime(LocomotionHash,0.1f);
     }
 
