@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyDedector : MonoBehaviour
+public class EnemyDedector : Singleton<EnemyDedector>
 {
-     public List<Enemy> _enemyList = new List<Enemy>();
+     List<Enemy> _enemyList = new List<Enemy>();
     
     
-     public List<Enemy> EnemyList => _enemyList;
+     public List<Enemy> EnemyList { get => _enemyList; set => _enemyList = value; }
      
    
-    public Enemy CurrentTarget { get; private set;}
+     public Enemy CurrentTarget { get; private set;}
 
      
 
