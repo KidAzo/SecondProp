@@ -2074,7 +2074,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1461686035}
   - component: {fileID: 1461686037}
-  - component: {fileID: 1461686038}
   m_Layer: 0
   m_Name: GunOrganizer
   m_TagString: Untagged
@@ -2111,26 +2110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1c5038121ff8d948b7862b2f6fa0dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyDedector: {fileID: 1468456400}
-  _gunDefaultRotation: {x: 0, y: 360, z: 0}
-  _gunRotationSpeed: 1.75
-  _attackDelay: 0.2
-  _attackDamage: 5
-  _attackRange: 6
   _gunRayPos: {fileID: 1976394730}
---- !u!114 &1461686038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461686034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48380f750e5467e45aa2bcd91f2e0d1c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animator: {fileID: 1169490891}
+  gunScriptableObject:
+  - {fileID: 11400000, guid: 64fce6a430ff24c4780decdc1f7669ac, type: 2}
 --- !u!1 &1468456397
 GameObject:
   m_ObjectHideFlags: 0
@@ -2193,6 +2175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06175695d563218448313b8f854539fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyList: []
 --- !u!135 &1468456401
 SphereCollider:
   m_ObjectHideFlags: 0

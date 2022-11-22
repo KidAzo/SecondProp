@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyDedector : Singleton<EnemyDedector>
 {
-     List<Enemy> _enemyList = new List<Enemy>();
+     public List<Enemy> _enemyList = new List<Enemy>();
     
     
      public List<Enemy> EnemyList { get => _enemyList; set => _enemyList = value; }
