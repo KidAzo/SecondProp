@@ -6,7 +6,7 @@ public class Health : MonoBehaviour
 {
     [SerializeField] float _maxhealth;
     float _currenthealth;
-    [SerializeField] EnemyHealthBar  _healthBar;
+    [SerializeField] EnemyHealthBar _healthBar;
     Enemy _enemy;
 
     void Awake()
@@ -16,8 +16,6 @@ public class Health : MonoBehaviour
         _healthBar.UpdateHealthBar(_maxhealth, _currenthealth);
     }
 
-
-
     public void TakeDamage(float attackDamage)
     {
         _currenthealth -= attackDamage;
@@ -26,5 +24,6 @@ public class Health : MonoBehaviour
 
         this.gameObject.SetActive(false);
         EnemyDedector.Instance.EnemyList.Remove(_enemy);
+        EnemyDedector.Instance.HealthList.Remove(this);
     }
 }

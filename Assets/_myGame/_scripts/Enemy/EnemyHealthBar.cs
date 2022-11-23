@@ -14,11 +14,13 @@ public class EnemyHealthBar : MonoBehaviour
     {
         _cam = Camera.main;
     }
+
     void Update()
     {
         transform.rotation = Quaternion.LookRotation(transform.position - _cam.transform.position);
         _healthBarSprite.fillAmount = Mathf.MoveTowards(_healthBarSprite.fillAmount, _target, _reduceSpeed * Time.deltaTime);
     }
+
     public void UpdateHealthBar(float maxHealth , float currentHealth)
     {
         _target = currentHealth / maxHealth;

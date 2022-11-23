@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ElectricalGun : Weapon , IWeaponTargetEnemy
+public class ElectricalGun : Weapon 
 {
-    RaycastHit hit;
     float nextTimeForFire = 0f;
 
     public ElectricalGun(WeaponScriptableObject gunScriptableObject)
@@ -13,31 +12,24 @@ public class ElectricalGun : Weapon , IWeaponTargetEnemy
         attackDamage = gunScriptableObject.attackDamage;
         range = gunScriptableObject.range;
         gunAnim = gunScriptableObject.weaponAnim;
+        maxTargetCount = gunScriptableObject.maxTargetCount;
     }
 
     public override void DoDamage()
     {
-        TurnEnemy(EnemyDedector.Instance.CurrentTarget.transform);
-        if (Physics.Raycast(weaponRayTransform.position, weaponRayTransform.forward, out hit, range))
         {
-            if (!hit.transform.gameObject.TryGetComponent<Health>(out Health health)) return;
-
 
             if (Time.time >= nextTimeForFire)
             {
                 nextTimeForFire = Time.time + attackDelay;
                 gunAnim.FireAnim(true);
-                health.TakeDamage(attackDamage);
+                for (int i = 0; i < EnemyDedector.Instance.HealthList.Count; i++)
+                {
+                    if (i == maxTargetCount) return;
+                    EnemyDedector.Instance.HealthList[i].TakeDamage(attackDamage);
+                }
             }
-
-
-
         }
     }
 
-    public void TurnEnemy(Transform currentTargetPos)
-    {
-        Vector3 directionOnFace = currentTargetPos.position - weaponRayTransform.position;
-        weaponRayTransform.rotation = Quaternion.LookRotation(directionOnFace);
-    }
 }
