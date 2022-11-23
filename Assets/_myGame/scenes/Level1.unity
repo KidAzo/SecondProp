@@ -2584,7 +2584,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1461686034
 GameObject:
@@ -2699,7 +2699,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyList: []
-  CurrentTargets: []
+  _healthList: []
+  enemyCount: 0
 --- !u!135 &1468456401
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3725,7 +3726,7 @@ Transform:
   m_Children:
   - {fileID: 1614432051}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1966868525
 MonoBehaviour:

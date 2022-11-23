@@ -27,7 +27,7 @@ public class WeaponController : MonoBehaviour
         switch (currentScriptableObject.GunType)
         {
             case GunType.ElectricalWeapon:
-                return new ElectricalGun(currentScriptableObject);
+                return new ElectricalWeapon(currentScriptableObject);
             default:
                 return null;
         }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class EnemyDedector : Singleton<EnemyDedector>
 {
-     public List<Enemy> _enemyList = new List<Enemy>();
-    
-     public List<Health> _healthList = new List<Health>();
+    public List<Enemy> _enemyList = new List<Enemy>();
+
+    public List<Health> _healthList = new List<Health>();
       
-     public List<Enemy> EnemyList { get => _enemyList; set => _enemyList = value; }
-     public List<Health> HealthList { get => _healthList; set => _healthList = value; }
+    public List<Enemy> EnemyList { get => _enemyList; set => _enemyList = value; }
+    public List<Health> HealthList { get => _healthList; set => _healthList = value; }
 
 
     public int enemyCount;
@@ -23,7 +23,7 @@ public class EnemyDedector : Singleton<EnemyDedector>
         _enemyList.Add(enemy);
         _healthList.Add(health);
     }
-
+    
     void OnTriggerExit(Collider other) 
     {
         if(!other.TryGetComponent<Enemy>(out Enemy enemy)) return;

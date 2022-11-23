@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ElectricalGun : Weapon 
+public class ElectricalWeapon : Weapon 
 {
     float nextTimeForFire = 0f;
 
-    public ElectricalGun(WeaponScriptableObject gunScriptableObject)
+    public ElectricalWeapon(WeaponScriptableObject gunScriptableObject)
     {
         attackDelay = gunScriptableObject.attackDelay;
         attackDamage = gunScriptableObject.attackDamage;
@@ -18,7 +18,6 @@ public class ElectricalGun : Weapon
     public override void DoDamage()
     {
         {
-
             if (Time.time >= nextTimeForFire)
             {
                 nextTimeForFire = Time.time + attackDelay;
@@ -31,5 +30,4 @@ public class ElectricalGun : Weapon
             }
         }
     }
-
 }

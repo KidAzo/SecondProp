@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDelay: 0.2
   attackDamage: 10
+  maxTargetCount: 1
   range: 6
   weaponAnim: {fileID: 9101959656276531454, guid: 69dd8fffab9879e4791d7132a7ec6403,
     type: 3}
