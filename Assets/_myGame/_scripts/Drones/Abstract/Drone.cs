@@ -11,7 +11,7 @@ public abstract class Drone
     public DroneAnimController droneAnimController;
 
     public abstract void DoDamage();
-    public abstract void FollowPlayer();
+
 }
 
 

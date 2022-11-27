@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class WeaponController : MonoBehaviour
 {    
-     EnemyDedector _enemyDedector;  
-     [SerializeField] Transform[] _gunRayPos;
-     [SerializeField] WeaponScriptableObject[] gunScriptableObject;
-     Weapon _selectedWeapon;     
-     int _selectedGunIndex;
+    [SerializeField] WeaponScriptableObject[] gunScriptableObject;
+    Weapon _selectedWeapon;     
+    int _selectedGunIndex;
 
     void Start()
     {
-        _enemyDedector = EnemyDedector.Instance;
         SelectGun();
     }
   
@@ -21,26 +18,14 @@ public class WeaponController : MonoBehaviour
        GunControll();
     }
 
-    Weapon CreateWeapon()
-    {
-        WeaponScriptableObject currentScriptableObject = gunScriptableObject[_selectedGunIndex];
-        switch (currentScriptableObject.GunType)
-        {
-            case GunType.ElectricalWeapon:
-                return new ElectricalWeapon(currentScriptableObject);
-            default:
-                return null;
-        }
-    }
-
     void SelectGun()
     {
-        _selectedWeapon = CreateWeapon();
+        _selectedWeapon = WeaponCreator.CreateWeapon(gunScriptableObject[_selectedGunIndex]);
     }
 
     void GunControll()
     {     
-      if(_enemyDedector.EnemyList.Count > 0)
+      if(EnemyDedector.Instance.EnemyList.Count > 0)
       {
             _selectedWeapon.DoDamage();
             return;
@@ -49,8 +34,7 @@ public class WeaponController : MonoBehaviour
       _selectedWeapon.gunAnim.FireAnim(false);     
     }
 
-   
 
-     
+
 
 }

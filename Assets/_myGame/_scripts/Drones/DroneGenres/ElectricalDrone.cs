@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ElectricalDrone : Drone 
+public class ElectricalDrone : Drone
 {
+
     public ElectricalDrone(DroneScriptable droneScriptable)
     {
         attackDelay = droneScriptable.attackDelay;
@@ -15,11 +16,7 @@ public class ElectricalDrone : Drone
 
     public override void DoDamage()
     {
-       
-    }
 
-    public override void FollowPlayer()
-    {
 
     }
 }
